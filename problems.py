@@ -21,3 +21,24 @@ def one():
                 return True
     print(f"{k} can not be summed by any two numbers from the list {input_list}.")
     return False
+
+
+def two():
+    # input integer array
+    # output integer array where element i is the product of all numbers except i.
+    list_length = int(input("Enter the amount of numbers which are in the list: "))
+    input_list = []
+    output_list = [1]*list_length
+
+    for i in range(list_length):
+        num = int(input("Enter a number for the list: "))
+        input_list.append(num)
+
+    for i in range(list_length):
+        for j in range(list_length):
+            if not i == j:
+                output_list[i] = output_list[i]*input_list[j]
+
+    print(f"The output is {output_list}")
+    return output_list
+

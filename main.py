@@ -5,6 +5,8 @@ def load_problem(n):
     match n:
         case 1:
             problems.one()
+        case 2:
+            problems.two()
         case _:
             raise ValueError()
 
