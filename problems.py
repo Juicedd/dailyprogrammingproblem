@@ -42,3 +42,42 @@ def two():
     print(f"The output is {output_list}")
     return output_list
 
+
+def three():
+    class Node:
+        def __init__(self, val, left=None, right=None):
+            self.val = val
+            self.left = left
+            self.right = right
+
+    def serialize(root: Node):
+        def helper(node: Node):
+            if node is None:
+                serialized.append("#") # indicate leaf node
+            else:
+                serialized.append(str(node.val))
+                helper(node.left)
+                helper(node.right)
+
+        serialized = []
+        helper(root)
+        return ",".join(serialized)
+
+    def deserialize(data):
+        def helper():
+            val = next(values)
+
+            if val == "#":
+                return None
+            
+            node = Node(val)
+            node.left = helper()
+            node.right = helper()
+            return node
+        
+        values = iter(data.split(","))
+        return helper()
+
+    #serialize a binary tree class to text.
+    node = Node('root', Node('left', Node('left.left')), Node('right'))
+    assert deserialize(serialize(node)).left.left.val == 'left.left'
