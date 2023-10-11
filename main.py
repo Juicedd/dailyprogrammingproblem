@@ -7,6 +7,11 @@ def load_problem(n):
             problems.one()
         case 2:
             problems.two()
+        case 3:
+            problems.three()
+        case 4:
+            problems.four()
+
         case _:
             raise ValueError()
 

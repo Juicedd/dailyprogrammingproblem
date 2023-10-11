@@ -81,3 +81,26 @@ def three():
     #serialize a binary tree class to text.
     node = Node('root', Node('left', Node('left.left')), Node('right'))
     assert deserialize(serialize(node)).left.left.val == 'left.left'
+
+
+def four():
+    input_list = [3,4,-1,1]
+    input_list = [x for x in input_list if x > 0]
+    # sort list
+    input_list.sort()
+
+    item = input_list[0]
+    while input_list:
+        item += 1
+        if item not in input_list:
+            print(f"The lowest number not in the array is {item}.")
+            return
+
+
+
+
+
+
+
+    print(new_list)
+
